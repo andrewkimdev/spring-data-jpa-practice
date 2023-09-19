@@ -10,7 +10,9 @@ import java.util.List;
 public interface UserRepository extends JpaRepository<User, Long> {
   User findByUsername(String username);
 
-  List<User> findAllByOrderByUsernameAsc(LocalDate start, LocalDate end);
+  List<User> findAllByOrderByUsernameAsc();
+
+  List<User> findByRegistrationDateBetween(LocalDate start, LocalDate end);
 
   List<User> findByUsernameAndEmail(String username, String email);
 
