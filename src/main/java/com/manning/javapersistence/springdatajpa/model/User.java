@@ -86,4 +86,37 @@ public class User {
         ", registrationDate=" + registrationDate +
         "}";
   }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o)
+      return true;
+    if (o == null || getClass() != o.getClass())
+      return false;
+
+    User user = (User) o;
+
+    if (level != user.level)
+      return false;
+    if (active != user.active)
+      return false;
+    if (!id.equals(user.id))
+      return false;
+    if (!username.equals(user.username))
+      return false;
+    if (!registrationDate.equals(user.registrationDate))
+      return false;
+    return email.equals(user.email);
+  }
+
+  @Override
+  public int hashCode() {
+    int result = id.hashCode();
+    result = 31 * result + username.hashCode();
+    result = 31 * result + registrationDate.hashCode();
+    result = 31 * result + email.hashCode();
+    result = 31 * result + level;
+    result = 31 * result + (active ? 1 : 0);
+    return result;
+  }
 }
