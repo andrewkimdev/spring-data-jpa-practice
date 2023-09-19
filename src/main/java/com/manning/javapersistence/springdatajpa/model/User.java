@@ -70,6 +70,10 @@ public class User {
     this.level = level;
   }
 
+  public LocalDate getRegistrationDate() {
+    return registrationDate;
+  }
+
   public void setRegistrationDate(LocalDate registrationDate) {
     this.registrationDate = registrationDate;
   }
@@ -82,7 +86,4 @@ public class User {
         ", registrationDate=" + registrationDate +
         "}";
   }
-
-
-
 }
