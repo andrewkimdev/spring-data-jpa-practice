@@ -16,6 +16,12 @@ public class User {
   private String username;
   private LocalDate registrationDate;
 
+  private String email;
+
+  private int level;
+
+  private boolean active;
+
   public User() {
   }
 
@@ -40,6 +46,30 @@ public class User {
     this.username = username;
   }
 
+  public String getEmail() {
+    return email;
+  }
+
+  public void setEmail(String email) {
+    this.email = email;
+  }
+
+  public boolean isActive() {
+    return this.active;
+  }
+
+  public void setActive(boolean active) {
+    this.active = active;
+  }
+
+  public int getLevel() {
+    return level;
+  }
+
+  public void setLevel(int level) {
+    this.level = level;
+  }
+
   public void setRegistrationDate(LocalDate registrationDate) {
     this.registrationDate = registrationDate;
   }
@@ -52,5 +82,7 @@ public class User {
         ", registrationDate=" + registrationDate +
         "}";
   }
+
+
 
 }
