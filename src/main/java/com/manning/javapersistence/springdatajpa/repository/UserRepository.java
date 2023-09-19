@@ -1,5 +1,6 @@
 package com.manning.javapersistence.springdatajpa.repository;
 
+import com.manning.javapersistence.springdatajpa.model.Projection;
 import com.manning.javapersistence.springdatajpa.model.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -66,9 +67,16 @@ public interface UserRepository extends JpaRepository<User, Long> {
   @Query("select count(u) from User u where u.active = ?1")
   int findNumberOfUsersByActivity(boolean active);
 
-  @Query("select u from User u where u.level = :level")
+  @Query("select u from User u where u.level = :level and u.active = :active")
   List<User> findByLevelAndActive(@Param("level") int level, @Param("active") boolean active);
 
   @Query("select u.username, LENGTH(u.email) as emai_length from #{#entityName} u where u.username like %?1%")
   List<Object[]> findByAsArrayAndSort(String text, Sort sort);
+
+  // Using projection
+  List<Projection.UserSummary> findByRegistrationDateAfter(LocalDate date);
+
+  List<Projection.UsernameOnly> findByEmail(String username);
+
+  <T> List<T> findByEmail(String username, Class<T> type);
 }
