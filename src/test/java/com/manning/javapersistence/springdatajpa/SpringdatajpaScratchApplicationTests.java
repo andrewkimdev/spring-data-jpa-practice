@@ -33,10 +33,10 @@ abstract class SpringdatajpaScratchApplicationTests {
     users.add(createUser("James", 2010, Month.JULY, 23, "james@somedomain.com", 0, true));
     users.add(createUser("Sarah", 2015, Month.SEPTEMBER, 17, "sarah@somedomain.com", 3, true));
     users.add(createUser("William", 2022, Month.JANUARY, 1, "william@somedomain.com", 2, false));
-    users.add(createUser("Jessica", 2013, Month.MARCH, 9, "jessica@somedomain.com", 2, true));
-    users.add(createUser("David", 2011, Month.AUGUST, 12, "david@somedomain.com", 1, false));
-    users.add(createUser("Linda", 2019, Month.JUNE, 20, "linda@somedomain.com", 0, true));
-    users.add(createUser("Michael", 2022, Month.MAY, 11, "michael@somedomain.com", 3, true));
+    users.add(createUser("Jessica", 2013, Month.MARCH, 9, "jessica@someotherdomain.com", 2, true));
+    users.add(createUser("David", 2011, Month.AUGUST, 12, "david@someotherdomain.com", 1, false));
+    users.add(createUser("Linda", 2019, Month.JUNE, 20, "linda@someotherdomain.com", 0, true));
+    users.add(createUser("Michael", 2022, Month.MAY, 11, "michael@someotherdomain.com", 3, true));
     users.add(createUser("Elizabeth", 2021, Month.OCTOBER, 2, "elizabeth@somedomain.com", 1, true));
 
     return users;
